@@ -15,10 +15,22 @@ run/main_scene="uid://w1wynksnemh4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://bd8wofu2yk7g1"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+Player=""
+
+[gui]
+
+theme/custom_font="uid://hli4qkuuvomo"
 
 [input]
 

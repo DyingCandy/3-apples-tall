@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dnx8tx7uy1ryd"]
+
+[ext_resource type="PackedScene" uid="uid://epjpx3v7tnu8" path="res://Scenes/UI/button.tscn" id="1_klylv"]
+[ext_resource type="Script" uid="uid://lke676wewq8v" path="res://Scenes/UI/play_button.gd" id="2_4gxqj"]
+[ext_resource type="Script" uid="uid://dglvhemv53cjq" path="res://Scenes/exit_button.gd" id="3_twnyg"]
+
+[node name="Title Screen" type="Control" unique_id=2095456573]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1514299293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=2084123279]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -356.0
+offset_right = 356.0
+offset_bottom = 150.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 125
+text = "3 Apples Tall"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1994200985]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.655
+anchor_right = 0.5
+anchor_bottom = 0.655
+offset_left = -216.0
+offset_top = -91.0
+offset_right = 216.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="PlayButton" parent="VBoxContainer" unique_id=1669381064 instance=ExtResource("1_klylv")]
+layout_mode = 2
+script = ExtResource("2_4gxqj")
+
+[node name="OptionsButton" parent="VBoxContainer" unique_id=149173852 instance=ExtResource("1_klylv")]
+layout_mode = 2
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="." unique_id=153416685]
+layout_mode = 1
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Exit"
+script = ExtResource("3_twnyg")
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_pressed"]

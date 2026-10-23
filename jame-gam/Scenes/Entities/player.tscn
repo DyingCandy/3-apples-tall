@@ -23,7 +23,7 @@ size = Vector2(45, 76)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgnvv"]
 size = Vector2(46, 73)
 
-[node name="Player" type="CharacterBody2D" unique_id=377595456]
+[node name="Player" type="CharacterBody2D" unique_id=377595456 groups=["Player"]]
 collision_layer = 2
 collision_mask = 11
 script = SubResource("GDScript_ft3ro")
@@ -41,3 +41,6 @@ texture = SubResource("CanvasTexture_wgnvv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1331244975]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_wgnvv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=984935254]
+position_smoothing_enabled = true
