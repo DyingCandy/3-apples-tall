@@ -1,0 +1,71 @@
+[gd_scene format=4 uid="uid://w1wynksnemh4"]
+
+[ext_resource type="PackedScene" uid="uid://rcn35wjfl023" path="res://Scenes/Entities/player.tscn" id="1_52fb6"]
+[ext_resource type="Texture2D" uid="uid://bg87hk1tfjsix" path="res://Assets/Colour Pallette/jame-gam-palette.webp" id="2_6l7je"]
+[ext_resource type="Script" uid="uid://bbgxub5x16rrm" path="res://Scripts/player.gd" id="2_jv6wh"]
+[ext_resource type="PackedScene" uid="uid://b5lb5imq2invg" path="res://Scenes/Entities/apple.tscn" id="4_x6ack"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jv6wh"]
+texture = ExtResource("2_6l7je")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_wgnvv"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 3
+sources/1 = SubResource("TileSetAtlasSource_jv6wh")
+
+[node name="Main Scene" type="Node2D" unique_id=1056973346]
+
+[node name="Player" parent="." unique_id=377595456 instance=ExtResource("1_52fb6")]
+script = ExtResource("2_jv6wh")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1132343530]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=166559997]
+z_index = -1
+tile_map_data = PackedByteArray("AADu/wQAAQACAAEAAADv/wQAAQACAAEAAADw/wQAAQACAAEAAADx/wQAAQACAAEAAADy/wQAAQACAAEAAADz/wQAAQACAAEAAAD0/wQAAQACAAEAAAD1/wQAAQACAAEAAAD2/wQAAQACAAEAAAD3/wQAAQACAAEAAAD4/wQAAQACAAEAAAD5/wQAAQACAAEAAAD6/wQAAQACAAEAAAD7/wQAAQACAAEAAAD8/wQAAQACAAEAAAD9/wQAAQACAAEAAAD+/wQAAQACAAEAAAD//wQAAQACAAEAAAAAAAQAAQACAAEAAAABAAQAAQACAAEAAAACAAQAAQACAAEAAAADAAQAAQACAAEAAAAEAAQAAQACAAEAAAAFAAQAAQACAAEAAAAGAAQAAQACAAEAAAAHAAQAAQACAAEAAAAIAAQAAQACAAEAAAAJAAQAAQACAAEAAAAKAAQAAQACAAEAAAALAAQAAQACAAEAAAAMAAQAAQACAAEAAAANAAQAAQACAAEAAAAOAAQAAQACAAEAAAAPAAQAAQACAAEAAAAQAAQAAQACAAEAAAA=")
+tile_set = SubResource("TileSet_wgnvv")
+
+[node name="Apple" parent="." unique_id=773228989 instance=ExtResource("4_x6ack")]
+position = Vector2(426, 85)

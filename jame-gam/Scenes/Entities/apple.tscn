@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b5lb5imq2invg"]
+
+[ext_resource type="Script" uid="uid://bcsduimdge5wx" path="res://Scenes/Entities/apple.gd" id="1_ih2og"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7gnc"]
+size = Vector2(24, 30)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wgnvv"]
+
+[node name="Apple" type="Area2D" unique_id=1976626580]
+script = ExtResource("1_ih2og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089045060]
+shape = SubResource("RectangleShape2D_m7gnc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1951343023]
+self_modulate = Color(0.7738443, 0, 0.22872347, 1)
+scale = Vector2(17, 23.000002)
+texture = SubResource("CanvasTexture_wgnvv")
+
+[connection signal="area_entered" from="." to="." method="_on_area_2d_area_entered"]

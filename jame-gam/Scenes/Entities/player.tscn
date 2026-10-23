@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://rcn35wjfl023"]
+
+[sub_resource type="GDScript" id="GDScript_ft3ro"]
+script/source = "extends CharacterBody2D
+
+var accel : float = 8000
+const maxSpeed : int = 15000
+
+func _physics_process(delta: float) -> void:
+	#Movement
+	var direction = Input.get_axis(\"left\", \"right\")
+	
+	if direction:
+		velocity.x = move_toward(velocity.x, maxSpeed * delta, accel * direction * delta)
+		move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft3ro"]
+size = Vector2(45, 76)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wgnvv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgnvv"]
+size = Vector2(46, 73)
+
+[node name="Player" type="CharacterBody2D" unique_id=377595456]
+collision_layer = 2
+collision_mask = 11
+script = SubResource("GDScript_ft3ro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2055077651]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_ft3ro")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=873811187]
+scale = Vector2(43.5, 76)
+texture = SubResource("CanvasTexture_wgnvv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=541296099]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1331244975]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wgnvv")
