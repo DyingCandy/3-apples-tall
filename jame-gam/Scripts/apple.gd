@@ -8,7 +8,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		print("apple collected")
 		player.scale *= 1.2
 		nextLevelTimer.start()
+		
 
 
 func _on_next_level_timeout() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Levels/level_" + str(int(get_tree().current_scene.name) + 1) + ".tscn")
+	print("level change")
