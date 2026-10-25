@@ -2,15 +2,65 @@
 
 [ext_resource type="Script" uid="uid://bbgxub5x16rrm" path="res://Scripts/player.gd" id="1_blnjl"]
 [ext_resource type="Texture2D" uid="uid://cye1ogeka1dn6" path="res://Assets/Sprites/Sprite-0001.png" id="2_nqm6o"]
+[ext_resource type="Texture2D" uid="uid://be7xe4t2dxgtd" path="res://Assets/Sprites/Player-animation-fall-up.png" id="2_svftf"]
+[ext_resource type="Texture2D" uid="uid://bpdfkpxhyxqc3" path="res://Assets/Sprites/Player-animation.png" id="3_a1rq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft3ro"]
 size = Vector2(13.333332, 29.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqx0t"]
+atlas = ExtResource("2_svftf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofjh0"]
+atlas = ExtResource("2_svftf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hnfo"]
+atlas = ExtResource("3_a1rq5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y18yp"]
+atlas = ExtResource("3_a1rq5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11ei8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqx0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofjh0")
+}],
+"loop": 1,
+"name": &"Fall Up",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hnfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y18yp")
+}],
+"loop": 1,
+"name": &"Falling",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nqm6o")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 1.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgnvv"]
-size = Vector2(13.62963, 21.925926)
+size = Vector2(13.925926, 22.814816)
 
 [node name="Player" type="CharacterBody2D" unique_id=377595456 groups=["Player"]]
-scale = Vector2(1.5, 1.5)
 collision_layer = 2
 collision_mask = 27
 script = ExtResource("1_blnjl")
@@ -20,9 +70,11 @@ position = Vector2(-7.947286e-08, 1.875)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_ft3ro")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=873811187]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1932195583]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_nqm6o")
+sprite_frames = SubResource("SpriteFrames_11ei8")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=541296099 groups=["Player"]]
 scale = Vector2(1.5, 1.5)
@@ -30,7 +82,7 @@ collision_layer = 2
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1331244975]
-position = Vector2(-3.1789145e-07, -0.44444486)
+position = Vector2(0.22222178, 0.22222142)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_wgnvv")
 

@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b11r5w4aldouv" path="res://Scenes/Entities/ketchup.tscn" id="6_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://ba2i1godq6gxi" path="res://Scenes/Entities/mustard.tscn" id="7_5f3p6"]
 [ext_resource type="PackedScene" uid="uid://cob7hj556q067" path="res://Scenes/Entities/jelly.tscn" id="8_jv26f"]
+[ext_resource type="Script" uid="uid://cpt2l2nntrbp5" path="res://Scripts/mustard.gd" id="8_rb0md"]
+[ext_resource type="PackedScene" uid="uid://l1h2mule6y32" path="res://Scenes/misc/explosion.tscn" id="9_u5ghp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iixi8"]
 texture = ExtResource("3_3mqfk")
@@ -95,13 +97,28 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
 sources/1 = SubResource("TileSetAtlasSource_3mqfk")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsxsc"]
+size = Vector2(11.802544, 4.355213)
+
 [node name="Level_1" type="Node2D" unique_id=1094937136]
 
 [node name="Player" parent="." unique_id=377595456 instance=ExtResource("2_iixi8")]
 position = Vector2(-292.06, -23.285)
 
 [node name="Apple" parent="." unique_id=1976626580 instance=ExtResource("3_cyadu")]
-position = Vector2(182, -1273)
+position = Vector2(510, -828)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Apple" unique_id=1783608518]
+amount = 20
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 50.0
+tangential_accel_min = 65.85
+tangential_accel_max = 65.85
+scale_amount_max = 1.75
+color = Color(1, 1, 0.62352943, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
 
 [node name="Tilemap" type="Node2D" parent="." unique_id=742557452]
 
@@ -142,6 +159,25 @@ scale = Vector2(2.43, 2.43)
 position = Vector2(329.99994, -296)
 rotation = -0.47472957
 scale = Vector2(3.41, 3.41)
+script = ExtResource("8_rb0md")
+
+[node name="Area2D" type="Area2D" parent="Mustard" unique_id=907652719]
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mustard/Area2D" unique_id=707711757]
+position = Vector2(0.2793808, -13.827232)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_tsxsc")
+
+[node name="MustardExplosion" parent="Mustard" unique_id=1207342533 instance=ExtResource("9_u5ghp")]
+position = Vector2(0.18894958, -17.048138)
+rotation = 0.95818573
+emitting = false
+lifetime = 1.0
+one_shot = true
 
 [node name="Jelly" parent="." unique_id=2119035337 instance=ExtResource("8_jv26f")]
 position = Vector2(594, -12)
+
+[connection signal="body_entered" from="Mustard/Area2D" to="Mustard" method="_on_area_2d_body_entered"]
