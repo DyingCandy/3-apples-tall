@@ -1,3 +1,78 @@
 [gd_scene format=3 uid="uid://diol8eqoiihum"]
 
-[node name="Level_2" type="Node2D" unique_id=1175764028]
+[ext_resource type="Theme" uid="uid://d3rdw3ww4hvx0" path="res://Themes/new_theme.tres" id="1_oylv5"]
+[ext_resource type="Texture2D" uid="uid://cye1ogeka1dn6" path="res://Assets/Sprites/Sprite-0001.png" id="2_w2ac1"]
+[ext_resource type="Texture2D" uid="uid://b4ywa62yd8uib" path="res://Assets/Sprites/Apple.png" id="3_ovj6s"]
+
+[node name="Level_2" type="Control" unique_id=1566869824]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oylv5")
+
+[node name="Panel" type="Panel" parent="." unique_id=1942731780]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=74106919]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_bottom = -0.040000916
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 77
+text = "VICTORY"
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Sprite0001" type="Sprite2D" parent="." unique_id=883561441]
+position = Vector2(278, 215)
+scale = Vector2(4, 4)
+texture = ExtResource("2_w2ac1")
+
+[node name="Apple" type="Sprite2D" parent="." unique_id=537979523]
+position = Vector2(358, 257.93)
+texture = ExtResource("3_ovj6s")
+
+[node name="Apple2" type="Sprite2D" parent="." unique_id=78847464]
+position = Vector2(358, 228.01999)
+texture = ExtResource("3_ovj6s")
+
+[node name="Apple3" type="Sprite2D" parent="." unique_id=1846289083]
+position = Vector2(358, 198.37999)
+texture = ExtResource("3_ovj6s")
+
+[node name="Apple4" type="Sprite2D" parent="." unique_id=763895592]
+position = Vector2(358, 168.075)
+texture = ExtResource("3_ovj6s")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=330560841]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.94200003
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.120025635
+grow_horizontal = 2
+grow_vertical = 0
+text = "YOU HAVE GROWN BY ONE APPLE"
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1070812710]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.24200001
+anchor_bottom = 0.056
+offset_right = 0.11999512
+offset_bottom = -0.15999985
+text = "More Coming SOON"
+autowrap_mode = 0

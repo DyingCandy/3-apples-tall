@@ -61,16 +61,10 @@ layout_mode = 2
 theme = ExtResource("1_twnyg")
 script = ExtResource("2_4gxqj")
 
-[node name="OptionsButton" parent="VBoxContainer" unique_id=149173852 instance=ExtResource("1_klylv")]
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=153416685]
 layout_mode = 2
-text = "Options"
-
-[node name="ExitButton" type="Button" parent="." unique_id=153416685]
-layout_mode = 1
-offset_right = 8.0
-offset_bottom = 8.0
 text = "Exit"
 script = ExtResource("3_twnyg")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="VBoxContainer/PlayButton" method="_on_pressed"]
-[connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_pressed"]

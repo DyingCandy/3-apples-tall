@@ -4,3 +4,9 @@
 
 [node name="Global" type="Node" unique_id=1117239711]
 script = ExtResource("1_6yl2a")
+
+[node name="End" type="Timer" parent="." unique_id=917462903]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="End" to="." method="_on_end_timeout"]

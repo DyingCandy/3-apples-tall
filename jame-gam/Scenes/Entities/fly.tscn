@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bhbguulpymawh"]
+
+[ext_resource type="Texture2D" uid="uid://jyw22jjymock" path="res://Assets/Sprites/Fly.png" id="1_dgwp2"]
+[ext_resource type="Script" uid="uid://y3o7ry3ci0ag" path="res://Scripts/fly.gd" id="1_ujqyp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujqyp"]
+atlas = ExtResource("1_dgwp2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1cxe"]
+atlas = ExtResource("1_dgwp2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11ei8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujqyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1cxe")
+}],
+"loop": 1,
+"name": &"Fly",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsxsc"]
+
+[node name="Fly" type="CharacterBody2D" unique_id=1752668804 groups=["Enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_ujqyp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=179191731]
+sprite_frames = SubResource("SpriteFrames_11ei8")
+animation = &"Fly"
+autoplay = "Fly"
+frame_progress = 0.096375085
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=580539284]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1764695676]
+shape = SubResource("CircleShape2D_tsxsc")
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

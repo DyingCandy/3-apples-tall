@@ -10,6 +10,7 @@ var startingRotation : float
 
 func _ready() -> void:
 	startingRotation = sprite_2d.rotation
+	
 
 func jelly_bounce():
 	velocity.y = -850
@@ -17,6 +18,8 @@ func jelly_bounce():
 func mustard_launch():
 	velocity.y = -650
 
+func die():
+	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

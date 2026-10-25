@@ -62,7 +62,7 @@ size = Vector2(13.925926, 22.814816)
 
 [node name="Player" type="CharacterBody2D" unique_id=377595456 groups=["Player"]]
 collision_layer = 2
-collision_mask = 27
+collision_mask = 31
 script = ExtResource("1_blnjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2055077651]
