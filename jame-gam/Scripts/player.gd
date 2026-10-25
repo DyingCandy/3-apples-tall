@@ -1,13 +1,17 @@
 extends CharacterBody2D
 
-
+var wallclimbSpeed = 250
 var speed = 300
-var jumpVelocity = -300
+var jumpVelocity = -375
+
+
+func jelly_bounce():
+	velocity.y = -800
 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() :
 		velocity += get_gravity() * delta
 	
 	# Handle jump.

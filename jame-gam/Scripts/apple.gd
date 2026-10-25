@@ -6,7 +6,7 @@ extends Area2D
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		print("apple collected")
-		player.scale *= 1.2
+		Global.applesCollected += 1
 		nextLevelTimer.start()
 		
 
