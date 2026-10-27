@@ -21,5 +21,6 @@ func _physics_process(delta: float) -> void:
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	print("die")
 	if body.name == "Player":
-		body.die()
+		body.hit(1)
+	
 	

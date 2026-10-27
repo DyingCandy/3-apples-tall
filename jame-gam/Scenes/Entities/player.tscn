@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cye1ogeka1dn6" path="res://Assets/Sprites/Sprite-0001.png" id="2_nqm6o"]
 [ext_resource type="Texture2D" uid="uid://be7xe4t2dxgtd" path="res://Assets/Sprites/Player-animation-fall-up.png" id="2_svftf"]
 [ext_resource type="Texture2D" uid="uid://bpdfkpxhyxqc3" path="res://Assets/Sprites/Player-animation.png" id="3_a1rq5"]
+[ext_resource type="Script" uid="uid://dt0x432cg1tpu" path="res://Scripts/health/health_component.gd" id="5_a1rq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft3ro"]
 size = Vector2(13.333332, 29.5)
@@ -89,3 +90,7 @@ shape = SubResource("RectangleShape2D_wgnvv")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=984935254]
 scale = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
+
+[node name="HealthComponent" type="Node" parent="." unique_id=2042030627]
+script = ExtResource("5_a1rq5")
+maxHealth = 3.0

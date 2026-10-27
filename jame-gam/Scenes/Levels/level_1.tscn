@@ -184,7 +184,7 @@ position = Vector2(-31, -45)
 scale = Vector2(2.43, 2.43)
 
 [node name="Ketchup2" parent="." unique_id=816015187 instance=ExtResource("6_xgxfi")]
-position = Vector2(348, 2.9999962)
+position = Vector2(355.00003, 2.9999962)
 rotation = 1.5707964
 scale = Vector2(2.43, 2.43)
 
