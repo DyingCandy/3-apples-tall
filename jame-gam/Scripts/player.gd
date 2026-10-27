@@ -19,8 +19,8 @@ func on_death():
 	queue_free()
 	#Change scene to death screen
 
-func jelly_bounce():
-	velocity.y = -850
+func jelly_bounce(amount : float) -> void:
+	velocity.y = -850 * amount
 
 func mustard_launch():
 	velocity.y = -650

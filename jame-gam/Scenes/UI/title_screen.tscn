@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://epjpx3v7tnu8" path="res://Scenes/UI/button.tscn" id="1_klylv"]
 [ext_resource type="Theme" uid="uid://d3rdw3ww4hvx0" path="res://Themes/new_theme.tres" id="1_twnyg"]
 [ext_resource type="Script" uid="uid://lke676wewq8v" path="res://Scenes/UI/play_button.gd" id="2_4gxqj"]
-[ext_resource type="Script" uid="uid://dglvhemv53cjq" path="res://Scenes/exit_button.gd" id="3_twnyg"]
+[ext_resource type="Script" uid="uid://dglvhemv53cjq" path="res://Scripts/exit_button.gd" id="3_twnyg"]
 
 [node name="Title Screen" type="Control" unique_id=2095456573]
 layout_mode = 3

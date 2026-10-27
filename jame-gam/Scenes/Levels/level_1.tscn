@@ -257,6 +257,10 @@ max_distance = 1000.0
 [node name="Jelly" parent="." unique_id=2119035337 instance=ExtResource("8_jv26f")]
 position = Vector2(594, -12)
 
+[node name="Jelly3" parent="." unique_id=2101394579 instance=ExtResource("8_jv26f")]
+position = Vector2(474, -225)
+jellypower = 2.0
+
 [node name="Fly" parent="." unique_id=1752668804 instance=ExtResource("12_afv7b")]
 position = Vector2(115, -605)
 
@@ -272,7 +276,7 @@ position = Vector2(191, -489)
 [node name="Fly5" parent="." unique_id=1500384907 instance=ExtResource("12_afv7b")]
 position = Vector2(142, -423)
 
-[node name="Jelly2" parent="." unique_id=2101394579 instance=ExtResource("8_jv26f")]
+[node name="Jelly2" parent="." unique_id=1882389385 instance=ExtResource("8_jv26f")]
 position = Vector2(223, -673)
 
 [node name="Label" type="Label" parent="." unique_id=1152480837]
