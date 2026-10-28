@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://be7xe4t2dxgtd" path="res://Assets/Sprites/Player-animation-fall-up.png" id="2_svftf"]
 [ext_resource type="Texture2D" uid="uid://bpdfkpxhyxqc3" path="res://Assets/Sprites/Player-animation.png" id="3_a1rq5"]
 [ext_resource type="Script" uid="uid://dt0x432cg1tpu" path="res://Scripts/health/health_component.gd" id="5_a1rq5"]
+[ext_resource type="PackedScene" uid="uid://b2t4qj1b121a4" path="res://Scenes/UI/player_health_bar.tscn" id="6_yqx0t"]
+[ext_resource type="Script" uid="uid://b6iovmw7h3op7" path="res://Scripts/health/player_health_bar.gd" id="7_ofjh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft3ro"]
 size = Vector2(13.333332, 29.5)
@@ -94,3 +96,10 @@ position_smoothing_enabled = true
 [node name="HealthComponent" type="Node" parent="." unique_id=2042030627]
 script = ExtResource("5_a1rq5")
 maxHealth = 3.0
+
+[node name="Player UI" type="CanvasLayer" parent="." unique_id=200662861]
+
+[node name="Health Bar" parent="Player UI" unique_id=184506146 instance=ExtResource("6_yqx0t")]
+script = ExtResource("7_ofjh0")
+
+[connection signal="health_changed" from="HealthComponent" to="Player UI/Health Bar" method="_on_health_component_health_changed"]

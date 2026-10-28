@@ -14,10 +14,12 @@ func _ready() -> void:
 
 func hit(damage_amount: float) -> void:
 	health_component.takeDamage(damage_amount)
+	print("hit recieved")
+	print(damage_amount)
 
 func on_death():
 	queue_free()
-	#Change scene to death screen
+	print("die")
 
 func jelly_bounce(amount : float) -> void:
 	velocity.y = -850 * amount

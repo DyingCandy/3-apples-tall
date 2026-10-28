@@ -16,7 +16,7 @@ func takeDamage(amount : float) -> void:
 	
 	health = clampf(health - amount, 0, maxHealth)
 	health_changed.emit(health, maxHealth)
-	
+	print(health)
 	if health <= 0:
 		die.emit()
 

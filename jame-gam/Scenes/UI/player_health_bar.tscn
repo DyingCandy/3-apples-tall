@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b2t4qj1b121a4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11ei8"]
+bg_color = Color(0.2581512, 1.5642495e-07, 8.4228816e-08, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.38208088, 2.8276816e-07, 1.2032687e-07, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_offset = Vector2(1.23, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tsxsc"]
+bg_color = Color(0.6666667, 0.11372549, 0.05490196, 0.7490196)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.50191987, 0.07467743, 0.029964762, 0.7490196)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.21176471, 0, 0, 0.6)
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_rjh02"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_11ei8")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_tsxsc")
+
+[node name="Health Bar" type="ProgressBar" unique_id=813875346]
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.017
+anchor_right = 0.25800002
+anchor_bottom = 0.07300001
+offset_right = -0.120010376
+offset_bottom = -0.16000175
+theme = SubResource("Theme_rjh02")
+theme_override_font_sizes/font_size = 9
+max_value = 3.0
+step = 1.0
+value = 3.0
+rounded = true
+show_percentage = false
