@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cxqm5y68xrc3m" path="res://Scripts/jelly.gd" id="1_6qtah"]
 [ext_resource type="Texture2D" uid="uid://b7vmpbfr6l5rj" path="res://Assets/Sprites/Jelly.png" id="2_bij8u"]
 [ext_resource type="Texture2D" uid="uid://rqkmqggn5f06" path="res://Assets/Sprites/Jelly-animation-sheet.png" id="3_bij8u"]
-[ext_resource type="AudioStream" uid="uid://ehhvj3u7hqyh" path="res://Assets/Audios/freesound_community-jelly-kick-85503.mp3" id="4_3as6a"]
+[ext_resource type="AudioStream" uid="uid://ehhvj3u7hqyh" path="res://Assets/Audios/Bounce/freesound_community-jelly-kick-85503.mp3" id="4_3as6a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3as6a"]
 atlas = ExtResource("3_bij8u")
@@ -105,11 +105,8 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjh02"]
-size = Vector2(20, 14.833334)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11ei8"]
-size = Vector2(22, 2.6666665)
+size = Vector2(22, 17.666668)
 
 [node name="Jelly" type="Area2D" unique_id=2101394579]
 scale = Vector2(3, 3)
@@ -122,15 +119,8 @@ sprite_frames = SubResource("SpriteFrames_11ei8")
 animation = &"spring"
 autoplay = "Idle"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=998325232]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=118230467]
-y_sort_enabled = true
-position = Vector2(0.33333334, 3.9166667)
-shape = SubResource("RectangleShape2D_rjh02")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2059753917]
-position = Vector2(0, -4.666667)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_11ei8")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=68093606]

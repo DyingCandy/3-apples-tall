@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bcsduimdge5wx" path="res://Scripts/apple.gd" id="1_ih2og"]
 [ext_resource type="Texture2D" uid="uid://b4ywa62yd8uib" path="res://Assets/Sprites/Apple.png" id="2_aydor"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7gnc"]
-size = Vector2(24, 30)
+[sub_resource type="CircleShape2D" id="CircleShape2D_14y0q"]
+radius = 12.0415945
 
 [node name="Apple" type="Area2D" unique_id=1976626580]
 collision_layer = 8
@@ -12,10 +12,11 @@ collision_mask = 2
 script = ExtResource("1_ih2og")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089045060]
-shape = SubResource("RectangleShape2D_m7gnc")
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_14y0q")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1951343023]
 texture_filter = 1
 texture = ExtResource("2_aydor")
 
-[connection signal="area_entered" from="." to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

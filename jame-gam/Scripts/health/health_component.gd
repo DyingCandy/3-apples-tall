@@ -10,6 +10,7 @@ var health : float
 func _ready() -> void:
 	health = maxHealth
 
+
 func takeDamage(amount : float) -> void:
 	if amount <= 0:
 		return

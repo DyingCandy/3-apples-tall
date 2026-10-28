@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cob7hj556q067" path="res://Scenes/Entities/jelly.tscn" id="8_jv26f"]
 [ext_resource type="Script" uid="uid://cpt2l2nntrbp5" path="res://Scripts/mustard.gd" id="8_rb0md"]
 [ext_resource type="PackedScene" uid="uid://l1h2mule6y32" path="res://Scenes/misc/explosion.tscn" id="9_u5ghp"]
-[ext_resource type="AudioStream" uid="uid://c4ttlqtuvhq1a" path="res://Assets/Audios/freesound_community-squirt-86215.mp3" id="10_hwvp3"]
+[ext_resource type="AudioStream" uid="uid://c4ttlqtuvhq1a" path="res://Assets/Audios/Bounce/freesound_community-squirt-86215.mp3" id="10_hwvp3"]
 [ext_resource type="PackedScene" uid="uid://bhbguulpymawh" path="res://Scenes/Entities/fly.tscn" id="12_afv7b"]
 [ext_resource type="Texture2D" uid="uid://b4ywa62yd8uib" path="res://Assets/Sprites/Apple.png" id="14_3628d"]
 
@@ -136,7 +136,7 @@ size = Vector2(11.802544, 4.355213)
 [node name="Level_1" type="Node2D" unique_id=1094937136]
 
 [node name="Player" parent="." unique_id=377595456 instance=ExtResource("2_iixi8")]
-position = Vector2(-284, -35)
+position = Vector2(421, -830)
 
 [node name="Apple" parent="." unique_id=1976626580 instance=ExtResource("3_cyadu")]
 position = Vector2(510, -828)
@@ -255,11 +255,8 @@ pitch_scale = 0.41
 max_distance = 1000.0
 
 [node name="Jelly" parent="." unique_id=2119035337 instance=ExtResource("8_jv26f")]
-position = Vector2(594, -12)
-
-[node name="Jelly3" parent="." unique_id=2101394579 instance=ExtResource("8_jv26f")]
-position = Vector2(474, -225)
-jellypower = 2.0
+position = Vector2(594, -6)
+jellypower = 1.1
 
 [node name="Fly" parent="." unique_id=1752668804 instance=ExtResource("12_afv7b")]
 position = Vector2(115, -605)

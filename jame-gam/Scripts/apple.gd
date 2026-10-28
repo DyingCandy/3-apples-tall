@@ -1,13 +1,19 @@
 extends Area2D
 
 
-@onready var player = $"../Player"
+
+@onready var health_component: HealthComponent = $HealthComponent
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Player"):
-		print("apple collected")
-		Global.applesCollected += 1
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_2.tscn")
-		Global.end.start()
-		
+
+
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+		if body.name == ("Player"):
+			print("apple collected")
+			Global.applesCollected += 1
+			body.add_heart(1)
+			#Global.end.start()
+			#queue_free()

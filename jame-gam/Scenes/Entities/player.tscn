@@ -7,6 +7,10 @@
 [ext_resource type="Script" uid="uid://dt0x432cg1tpu" path="res://Scripts/health/health_component.gd" id="5_a1rq5"]
 [ext_resource type="PackedScene" uid="uid://b2t4qj1b121a4" path="res://Scenes/UI/player_health_bar.tscn" id="6_yqx0t"]
 [ext_resource type="Script" uid="uid://b6iovmw7h3op7" path="res://Scripts/health/player_health_bar.gd" id="7_ofjh0"]
+[ext_resource type="Script" uid="uid://cuq2prbubauwn" path="res://Scripts/health/label.gd" id="8_2hnfo"]
+[ext_resource type="PackedScene" uid="uid://c7bnrxncvefip" path="res://Scenes/misc/death_explosion.tscn" id="9_y18yp"]
+[ext_resource type="AudioStream" uid="uid://bswjptd77enww" path="res://Assets/Audios/death-hit/freesound_community-poof-of-smoke-87381.mp3" id="10_85s6f"]
+[ext_resource type="AudioStream" uid="uid://dp06lejyi6ad" path="res://Assets/Audios/death-hit/freesound_community-poof-80161.mp3" id="11_14y0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft3ro"]
 size = Vector2(13.333332, 29.5)
@@ -100,6 +104,41 @@ maxHealth = 3.0
 [node name="Player UI" type="CanvasLayer" parent="." unique_id=200662861]
 
 [node name="Health Bar" parent="Player UI" unique_id=184506146 instance=ExtResource("6_yqx0t")]
+anchor_right = 0.209
+offset_right = 0.23999023
 script = ExtResource("7_ofjh0")
 
+[node name="Label" type="Label" parent="Player UI/Health Bar" unique_id=1699327984]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.085
+anchor_right = 0.15
+anchor_bottom = 0.994
+offset_left = 0.019799232
+offset_top = -0.12000036
+offset_right = 0.0019950867
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+script = ExtResource("8_2hnfo")
+
+[node name="Death explosion" parent="." unique_id=1018365161 instance=ExtResource("9_y18yp")]
+
+[node name="Death Screen Timer" type="Timer" parent="." unique_id=546868778]
+wait_time = 0.25
+one_shot = true
+
+[node name="Audios" type="Node2D" parent="." unique_id=1825275647]
+
+[node name="Death" type="AudioStreamPlayer2D" parent="Audios" unique_id=1186782906]
+stream = ExtResource("10_85s6f")
+volume_db = 1.0
+max_distance = 500.0
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="Audios" unique_id=1213629604]
+stream = ExtResource("11_14y0q")
+volume_db = 1.0
+
 [connection signal="health_changed" from="HealthComponent" to="Player UI/Health Bar" method="_on_health_component_health_changed"]
+[connection signal="health_changed" from="HealthComponent" to="Player UI/Health Bar/Label" method="_on_health_component_health_changed"]
+[connection signal="timeout" from="Death Screen Timer" to="." method="_on_death_screen_timer_timeout"]
