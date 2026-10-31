@@ -6,6 +6,7 @@
 script = ExtResource("1_6yl2a")
 
 [node name="End" type="Timer" parent="." unique_id=917462903]
+wait_time = 0.3
 one_shot = true
 
 [connection signal="timeout" from="End" to="." method="_on_end_timeout"]

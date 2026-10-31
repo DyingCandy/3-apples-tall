@@ -1,7 +1,7 @@
 extends Node
 
 
-@onready var end: Timer = $End
+@onready var nextLevel: Timer = $End
 var applesCollected : int = 0
 
 func _process(delta: float) -> void:

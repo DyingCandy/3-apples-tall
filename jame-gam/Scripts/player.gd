@@ -71,8 +71,12 @@ func _physics_process(delta: float) -> void:
 			sprite_2d.rotation = startingRotation + clamp(offset, deg_to_rad(-3), deg_to_rad(3))
 		
 	else:
-		sprite_2d.rotation = move_toward(sprite_2d.rotation, 0, 10)
-		velocity.x = move_toward(velocity.x, 0, speed)
+		if is_on_floor():
+			sprite_2d.rotation = move_toward(sprite_2d.rotation, 0, 10)
+			velocity.x = move_toward(velocity.x, 0, speed)
+		elif not is_on_floor():
+			sprite_2d.rotation = move_toward(sprite_2d.rotation, 0, 10)
+			velocity.x = move_toward(velocity.x, 0, 75)
 	
 	move_and_slide()
 	

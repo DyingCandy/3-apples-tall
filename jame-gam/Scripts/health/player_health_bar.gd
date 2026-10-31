@@ -5,6 +5,6 @@ extends ProgressBar
 
 
 func _on_health_component_health_changed(health: int, maxHealth: int) -> void:
-	value = health
 	max_value = maxHealth
+	value = health
 	print("health bar received")

@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bhbguulpymawh" path="res://Scenes/Entities/fly.tscn" id="12_afv7b"]
 [ext_resource type="Texture2D" uid="uid://b4ywa62yd8uib" path="res://Assets/Sprites/Apple.png" id="14_3628d"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iixi8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2mw1"]
 texture = ExtResource("3_3mqfk")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
@@ -49,9 +49,9 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
-sources/4 = SubResource("TileSetAtlasSource_iixi8")
+sources/4 = SubResource("TileSetAtlasSource_k2mw1")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31phq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjl6l"]
 texture = ExtResource("4_tjl6l")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -75,7 +75,7 @@ texture_region_size = Vector2i(32, 32)
 8:1/0 = 0
 9:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyadu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3628d"]
 texture = ExtResource("3_3mqfk")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
@@ -96,10 +96,10 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
-sources/1 = SubResource("TileSetAtlasSource_cyadu")
-sources/0 = SubResource("TileSetAtlasSource_31phq")
+sources/1 = SubResource("TileSetAtlasSource_3628d")
+sources/0 = SubResource("TileSetAtlasSource_tjl6l")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3mqfk"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_irw6p"]
 texture = ExtResource("3_3mqfk")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
@@ -124,7 +124,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 7
-sources/1 = SubResource("TileSetAtlasSource_3mqfk")
+sources/1 = SubResource("TileSetAtlasSource_irw6p")
 
 [sub_resource type="Curve" id="Curve_11ei8"]
 _data = [Vector2(0.0032154322, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.47435898), 0.0, 0.0, 0, 0]
@@ -136,10 +136,10 @@ size = Vector2(11.802544, 4.355213)
 [node name="Level_1" type="Node2D" unique_id=1094937136]
 
 [node name="Player" parent="." unique_id=377595456 instance=ExtResource("2_iixi8")]
-position = Vector2(421, -830)
+position = Vector2(-321, -15)
 
 [node name="Apple" parent="." unique_id=1976626580 instance=ExtResource("3_cyadu")]
-position = Vector2(510, -828)
+position = Vector2(510, -825)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Apple" unique_id=1783608518]
 amount = 20
@@ -275,6 +275,7 @@ position = Vector2(142, -423)
 
 [node name="Jelly2" parent="." unique_id=1882389385 instance=ExtResource("8_jv26f")]
 position = Vector2(223, -673)
+jellypower = 0.71
 
 [node name="Label" type="Label" parent="." unique_id=1152480837]
 offset_left = -485.0
@@ -286,9 +287,25 @@ text = "YOU MUST EAT THE APPLE TO GROWWWWW!!"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=156981085]
 texture_filter = 1
-position = Vector2(510, -839)
+position = Vector2(510, -836)
 energy = 2.0
 texture = ExtResource("14_3628d")
 texture_scale = 3.68
+
+[node name="Level name" type="CanvasLayer" parent="." unique_id=428057072]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Level name" unique_id=1564213802]
+anchors_preset = -1
+anchor_left = 0.42700002
+anchor_right = 0.58900005
+anchor_bottom = 0.078
+offset_left = 0.05999756
+offset_right = 0.039978027
+offset_bottom = -0.07999992
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Mustard/Area2D" to="Mustard" method="_on_area_2d_body_entered"]

@@ -15,5 +15,5 @@ func _on_body_entered(body: Node2D) -> void:
 			print("apple collected")
 			Global.applesCollected += 1
 			body.add_heart(1)
-			#Global.end.start()
-			#queue_free()
+			Global.nextLevel.start()
+			queue_free()

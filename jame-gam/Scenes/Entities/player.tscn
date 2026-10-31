@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dp06lejyi6ad" path="res://Assets/Audios/death-hit/freesound_community-poof-80161.mp3" id="11_14y0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft3ro"]
-size = Vector2(13.333332, 29.5)
+size = Vector2(13.333332, 28.833334)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqx0t"]
 atlas = ExtResource("2_svftf")
@@ -73,7 +73,7 @@ collision_mask = 31
 script = ExtResource("1_blnjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2055077651]
-position = Vector2(-7.947286e-08, 1.875)
+position = Vector2(-7.947286e-08, 1.3750005)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_ft3ro")
 
