@@ -1,5 +1,11 @@
 extends Node
 
+#Player
+var maxPlayerHealth : float = 3
+
+
+
+
 
 @onready var nextLevel: Timer = $End
 var applesCollected : int = 0

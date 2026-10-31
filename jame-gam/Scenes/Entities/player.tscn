@@ -141,6 +141,16 @@ max_distance = 500.0
 stream = ExtResource("11_14y0q")
 volume_db = 1.0
 
+[node name="Dash timer" type="Timer" parent="." unique_id=1977077730]
+wait_time = 0.2
+one_shot = true
+
+[node name="Dash again timer" type="Timer" parent="Dash timer" unique_id=325130749]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="health_changed" from="HealthComponent" to="Player UI/Health Bar" method="_on_health_component_health_changed"]
 [connection signal="health_changed" from="HealthComponent" to="Player UI/Health Bar/Label" method="_on_health_component_health_changed"]
 [connection signal="timeout" from="Death Screen Timer" to="." method="_on_death_screen_timer_timeout"]
+[connection signal="timeout" from="Dash timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Dash timer/Dash again timer" to="." method="_on_dash_again_timer_timeout"]

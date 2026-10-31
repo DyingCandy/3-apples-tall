@@ -8,6 +8,7 @@ signal die
 var health : float
 
 func _ready() -> void:
+	maxHealth = Global.maxPlayerHealth
 	health = maxHealth
 
 
