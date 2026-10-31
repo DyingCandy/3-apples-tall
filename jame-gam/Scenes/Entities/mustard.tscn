@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://ba2i1godq6gxi"]
 
 [ext_resource type="Texture2D" uid="uid://wwh03iicovfs" path="res://Assets/Sprites/Mustard.png" id="1_6etgi"]
+[ext_resource type="Script" uid="uid://cpt2l2nntrbp5" path="res://Scripts/mustard.gd" id="1_bq315"]
+[ext_resource type="PackedScene" uid="uid://l1h2mule6y32" path="res://Scenes/misc/explosion.tscn" id="3_c1r0e"]
+[ext_resource type="AudioStream" uid="uid://c4ttlqtuvhq1a" path="res://Assets/Audios/Bounce/freesound_community-squirt-86215.mp3" id="4_kt6u6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11ei8"]
 size = Vector2(18, 43)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aunnx"]
+size = Vector2(11.802544, 4.355213)
+
 [node name="Mustard" type="StaticBody2D" unique_id=1315774688]
+script = ExtResource("1_bq315")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=546852925]
 texture = ExtResource("1_6etgi")
@@ -13,3 +20,27 @@ texture = ExtResource("1_6etgi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=913852384]
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_11ei8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2007020949]
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2143354544]
+position = Vector2(0.2793808, -13.827232)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_aunnx")
+
+[node name="MustardExplosion" parent="." unique_id=1207342533 instance=ExtResource("3_c1r0e")]
+position = Vector2(0.18894958, -17.048138)
+rotation = 0.95818573
+emitting = false
+lifetime = 1.0
+one_shot = true
+
+[node name="Squirt" type="AudioStreamPlayer2D" parent="." unique_id=455291860]
+stream = ExtResource("4_kt6u6")
+volume_db = 1.0
+pitch_scale = 0.41
+max_distance = 1000.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

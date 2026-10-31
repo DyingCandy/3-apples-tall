@@ -9,9 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b11r5w4aldouv" path="res://Scenes/Entities/ketchup.tscn" id="6_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://ba2i1godq6gxi" path="res://Scenes/Entities/mustard.tscn" id="7_5f3p6"]
 [ext_resource type="PackedScene" uid="uid://cob7hj556q067" path="res://Scenes/Entities/jelly.tscn" id="8_jv26f"]
-[ext_resource type="Script" uid="uid://cpt2l2nntrbp5" path="res://Scripts/mustard.gd" id="8_rb0md"]
-[ext_resource type="PackedScene" uid="uid://l1h2mule6y32" path="res://Scenes/misc/explosion.tscn" id="9_u5ghp"]
-[ext_resource type="AudioStream" uid="uid://c4ttlqtuvhq1a" path="res://Assets/Audios/Bounce/freesound_community-squirt-86215.mp3" id="10_hwvp3"]
 [ext_resource type="PackedScene" uid="uid://bhbguulpymawh" path="res://Scenes/Entities/fly.tscn" id="12_afv7b"]
 [ext_resource type="Texture2D" uid="uid://b4ywa62yd8uib" path="res://Assets/Sprites/Apple.png" id="14_3628d"]
 
@@ -130,10 +127,10 @@ sources/1 = SubResource("TileSetAtlasSource_irw6p")
 _data = [Vector2(0.0032154322, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.47435898), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsxsc"]
-size = Vector2(11.802544, 4.355213)
-
 [node name="Level_1" type="Node2D" unique_id=1094937136]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=173790393]
+position = Vector2(-322, -1)
 
 [node name="Player" parent="." unique_id=377595456 instance=ExtResource("2_iixi8")]
 position = Vector2(-321, -15)
@@ -230,33 +227,10 @@ scale_amount_curve = SubResource("Curve_11ei8")
 position = Vector2(329.99994, -296)
 rotation = -0.47472957
 scale = Vector2(3.41, 3.41)
-script = ExtResource("8_rb0md")
-
-[node name="Area2D" type="Area2D" parent="Mustard" unique_id=907652719]
-collision_layer = 16
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mustard/Area2D" unique_id=707711757]
-position = Vector2(0.2793808, -13.827232)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_tsxsc")
-
-[node name="MustardExplosion" parent="Mustard" unique_id=1207342533 instance=ExtResource("9_u5ghp")]
-position = Vector2(0.18894958, -17.048138)
-rotation = 0.95818573
-emitting = false
-lifetime = 1.0
-one_shot = true
-
-[node name="Squirt" type="AudioStreamPlayer2D" parent="Mustard" unique_id=1049994776]
-stream = ExtResource("10_hwvp3")
-volume_db = 1.0
-pitch_scale = 0.41
-max_distance = 1000.0
 
 [node name="Jelly" parent="." unique_id=2119035337 instance=ExtResource("8_jv26f")]
 position = Vector2(594, -6)
-jellypower = 1.1
+jellypower = 1.05
 
 [node name="Fly" parent="." unique_id=1752668804 instance=ExtResource("12_afv7b")]
 position = Vector2(115, -605)
@@ -307,5 +281,3 @@ theme_override_font_sizes/normal_font_size = 22
 text = "Level 1"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="body_entered" from="Mustard/Area2D" to="Mustard" method="_on_area_2d_body_entered"]

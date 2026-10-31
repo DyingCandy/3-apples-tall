@@ -68,6 +68,7 @@ animations = [{
 size = Vector2(13.925926, 22.814816)
 
 [node name="Player" type="CharacterBody2D" unique_id=377595456 groups=["Player"]]
+scale = Vector2(0.7, 0.7)
 collision_layer = 2
 collision_mask = 31
 script = ExtResource("1_blnjl")
@@ -95,6 +96,7 @@ shape = SubResource("RectangleShape2D_wgnvv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=984935254]
 scale = Vector2(1.5, 1.5)
+zoom = Vector2(1.575, 1.575)
 position_smoothing_enabled = true
 
 [node name="HealthComponent" type="Node" parent="." unique_id=2042030627]

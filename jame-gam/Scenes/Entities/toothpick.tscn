@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://hik0sfe6jphp"]
+
+[ext_resource type="Script" uid="uid://d08vg7k0b320w" path="res://Scripts/toothpick.gd" id="1_oda3m"]
+[ext_resource type="Texture2D" uid="uid://2cpih0u476f7" path="res://Assets/Sprites/Toothpick.png" id="1_trlhf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ei8"]
+size = Vector2(73, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsxsc"]
+size = Vector2(12, 10)
+
+[node name="Toothpick" type="Area2D" unique_id=1871821260]
+collision_layer = 16
+collision_mask = 6
+script = ExtResource("1_oda3m")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=887653371]
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1848769931]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_11ei8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1860110268]
+position = Vector2(41, 0)
+shape = SubResource("RectangleShape2D_tsxsc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1782028660]
+texture_filter = 1
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_trlhf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

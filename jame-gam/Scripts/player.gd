@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var hit_sound: AudioStreamPlayer2D = $Audios/Hit
 @onready var death_sound: AudioStreamPlayer2D = $Audios/Death
 
+@onready var marker_2d: Marker2D = $"../Marker2D"
 
 @onready var death_explosion: CPUParticles2D = $"Death explosion"
 @onready var health_component: HealthComponent = $HealthComponent
@@ -13,7 +14,7 @@ extends CharacterBody2D
 #Movement
 var bobbleSpeed = 10
 var bobbleAngle = 3
-var speed = 250
+var speed = 200
 var jumpVelocity = -375
 var startingRotation : float
 var can_move : bool = true
@@ -29,15 +30,20 @@ func _ready() -> void:
 	startingRotation = sprite_2d.rotation
 	health_component.die.connect(on_death)
 	can_move = true
+	sprite_2d.show()
 
 func hit(damage_amount: float) -> void:
 	health_component.takeDamage(damage_amount)
-	
+	if velocity.y > 0 :
+		velocity.y = -350
+	elif velocity.y < 0:
+		velocity.y = 100
 	hit_sound.play(0.5)
 	print("hit recieved")
 	print(damage_amount)
 
 func on_death():
+	
 	death_explosion.emitting = true
 	can_move = false
 	sprite_2d.hide()
@@ -46,10 +52,10 @@ func on_death():
 	print("die")
 
 func jelly_bounce(amount : float) -> void:
-	velocity.y = -850 * amount
+	velocity.y = -900 * amount
 
 func mustard_launch():
-	velocity.y = -650
+	velocity.y = -700
 
 
 
@@ -90,4 +96,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_death_screen_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://Scenes/UI/title_screen.tscn")
+	#global_position = marker_2d.global_position
+	#can_move = true
+	#sprite_2d.show()
+	get_tree().reload_current_scene()

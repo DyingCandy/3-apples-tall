@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cogknodoyiicv"]
+
+[ext_resource type="Script" uid="uid://dnuacicriwvig" path="res://Scripts/breaking_shelf.gd" id="1_mdka7"]
+[ext_resource type="Texture2D" uid="uid://c4r5m1x28ojto" path="res://Assets/Sprites/Breaking-shelf.png" id="2_k6mv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsxsc"]
+size = Vector2(96, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjgor"]
+atlas = ExtResource("2_k6mv7")
+region = Rect2(0, 0, 96, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td17v"]
+atlas = ExtResource("2_k6mv7")
+region = Rect2(96, 0, 96, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjtiq"]
+atlas = ExtResource("2_k6mv7")
+region = Rect2(192, 0, 96, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl0v7"]
+atlas = ExtResource("2_k6mv7")
+region = Rect2(0, 0, 96, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11ei8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjgor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td17v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjtiq")
+}],
+"loop": 0,
+"name": &"Breaking",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl0v7")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ei8"]
+size = Vector2(96, 5)
+
+[sub_resource type="Curve" id="Curve_11ei8"]
+_data = [Vector2(0.077170424, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Breaking shelf" type="StaticBody2D" unique_id=701389541]
+collision_mask = 6
+script = ExtResource("1_mdka7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=136191855]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_tsxsc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1666630652]
+sprite_frames = SubResource("SpriteFrames_11ei8")
+animation = &"Idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=249778198]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1084205232]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_11ei8")
+
+[node name="Shelfbreak particles" type="CPUParticles2D" parent="." unique_id=40338692]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(58.115, 15.955)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 307.93
+linear_accel_min = -0.45
+linear_accel_max = -0.45
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_11ei8")
+color = Color(0.25948444, 0.1760498, 0.080543675, 1)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
