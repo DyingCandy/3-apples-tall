@@ -442,4 +442,16 @@ shape = SubResource("RectangleShape2D_11ei8")
 [node name="Apple" parent="." unique_id=1976626580 instance=ExtResource("6_8qsmg")]
 position = Vector2(946, -26)
 
+[node name="Labels" type="Node2D" parent="." unique_id=551971100]
+
+[node name="Label" type="Label" parent="Labels" unique_id=139560270]
+offset_left = 67.0
+offset_top = -245.0
+offset_right = 404.0
+offset_bottom = -179.0
+text = "You can dash by pressing left shift
+Use this ability to get over the toothpicks
+below you"
+horizontal_alignment = 1
+
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
