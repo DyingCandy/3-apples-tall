@@ -40,6 +40,10 @@ func _ready() -> void:
 	health_component.die.connect(on_death)
 	can_move = true
 	sprite_2d.show()
+	var curScene = int(get_parent().name)
+	print("Level " + str(curScene))
+	if curScene > 1:
+		can_dash = true
 
 func hit(damage_amount: float) -> void:
 	health_component.takeDamage(damage_amount)

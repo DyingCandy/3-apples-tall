@@ -4,6 +4,8 @@
 [ext_resource type="Theme" uid="uid://d3rdw3ww4hvx0" path="res://Themes/new_theme.tres" id="1_twnyg"]
 [ext_resource type="Script" uid="uid://lke676wewq8v" path="res://Scenes/UI/play_button.gd" id="2_4gxqj"]
 [ext_resource type="Script" uid="uid://dglvhemv53cjq" path="res://Scripts/exit_button.gd" id="3_twnyg"]
+[ext_resource type="Texture2D" uid="uid://cye1ogeka1dn6" path="res://Assets/Sprites/Sprite-0001.png" id="5_wv540"]
+[ext_resource type="Texture2D" uid="uid://b4ywa62yd8uib" path="res://Assets/Sprites/Apple.png" id="6_dsf7a"]
 
 [node name="Title Screen" type="Control" unique_id=2095456573]
 layout_mode = 3
@@ -65,6 +67,71 @@ script = ExtResource("2_4gxqj")
 layout_mode = 2
 text = "Exit"
 script = ExtResource("3_twnyg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=901634907]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46400002
+anchor_top = 0.814
+anchor_right = 0.514
+anchor_bottom = 0.90300006
+offset_left = 0.039978027
+offset_top = -0.040008545
+offset_right = 0.040008545
+offset_bottom = -0.08001709
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.25, 1.25)
+texture = ExtResource("5_wv540")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2121520386]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.77800006
+anchor_right = 0.544
+anchor_bottom = 0.86700004
+offset_left = -4.0
+offset_top = -0.08001709
+offset_right = -0.16003418
+offset_bottom = -0.120025635
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.48, 0.48)
+texture = ExtResource("6_dsf7a")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1709828330]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.814
+anchor_right = 0.544
+anchor_bottom = 0.90300006
+offset_left = -4.0
+offset_top = -0.040008545
+offset_right = -0.16003418
+offset_bottom = -0.08001709
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.48, 0.48)
+texture = ExtResource("6_dsf7a")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=552601012]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.85300004
+anchor_right = 0.544
+anchor_bottom = 0.94200003
+offset_left = -4.0
+offset_top = -0.08001709
+offset_right = -0.16003418
+offset_bottom = -0.120025635
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.48, 0.48)
+texture = ExtResource("6_dsf7a")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="VBoxContainer/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_pressed"]
