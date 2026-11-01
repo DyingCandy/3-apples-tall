@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://csdpqx22eig1q" path="res://Assets/Tilemap/Tilemap_Cupboard.png" id="1_rc141"]
 [ext_resource type="Texture2D" uid="uid://bg87hk1tfjsix" path="res://Assets/Colour Pallette/jame-gam-palette.webp" id="2_yy6i0"]
 [ext_resource type="PackedScene" uid="uid://rcn35wjfl023" path="res://Scenes/Entities/player.tscn" id="3_167vu"]
-[ext_resource type="PackedScene" uid="uid://cogknodoyiicv" path="res://Scenes/Entities/breaking_shelf.tscn" id="5_4ahh4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w2ac1"]
 texture = ExtResource("1_rc141")
@@ -152,10 +151,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ovj6s")
 
-[node name="Level 2" type="Node2D" unique_id=330502913]
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=2040873041]
-position = Vector2(-425, -31)
+[node name="Level 3" type="Node2D" unique_id=330502913]
 
 [node name="Tilemap" type="Node2D" parent="." unique_id=1566295246]
 
@@ -195,7 +191,3 @@ theme_override_font_sizes/normal_font_size = 22
 text = "Level 3"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Breaking shelf" parent="." unique_id=701389541 instance=ExtResource("5_4ahh4")]
-position = Vector2(145, -70)
-scale = Vector2(0.455, 0.455)
