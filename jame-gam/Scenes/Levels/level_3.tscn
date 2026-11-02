@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://rcn35wjfl023" path="res://Scenes/Entities/player.tscn" id="3_167vu"]
 [ext_resource type="PackedScene" uid="uid://cob7hj556q067" path="res://Scenes/Entities/jelly.tscn" id="4_rc141"]
 [ext_resource type="PackedScene" uid="uid://hik0sfe6jphp" path="res://Scenes/Entities/toothpick.tscn" id="5_yy6i0"]
+[ext_resource type="PackedScene" uid="uid://bw3u3mhjr7hqu" path="res://Scenes/Entities/Golden_apple.tscn" id="6_yy6i0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w2ac1"]
 texture = ExtResource("1_rc141")
@@ -186,7 +187,7 @@ tile_map_data = PackedByteArray("AADg/+H/AAAGAAEAAADg/+L/AAAGAAEAAADg/+P/AAAGAAE
 tile_set = SubResource("TileSet_11ei8")
 
 [node name="Player" parent="." unique_id=377595456 instance=ExtResource("3_167vu")]
-position = Vector2(-407, -3.000002)
+position = Vector2(4149.9995, -115.99999)
 
 [node name="Level name" type="CanvasLayer" parent="." unique_id=368452639]
 
@@ -486,3 +487,6 @@ scale = Vector2(0.3, 0.3)
 position = Vector2(182.00003, -104.666664)
 rotation = 1.5707964
 scale = Vector2(0.3, 0.3)
+
+[node name="Apple" parent="." unique_id=1976626580 instance=ExtResource("6_yy6i0")]
+position = Vector2(4263, -132)

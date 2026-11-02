@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bw3u3mhjr7hqu"]
+
+[ext_resource type="Script" uid="uid://baa8400yyy4lu" path="res://Scripts/Golden_apple.gd" id="1_dfjyt"]
+[ext_resource type="Texture2D" uid="uid://b4ywa62yd8uib" path="res://Assets/Sprites/Apple.png" id="2_rrc54"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14y0q"]
+radius = 12.0415945
+
+[node name="Apple" type="Area2D" unique_id=1976626580]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_dfjyt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089045060]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_14y0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1951343023]
+texture_filter = 1
+texture = ExtResource("2_rrc54")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

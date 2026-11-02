@@ -26,6 +26,7 @@ var dashing : bool = false
 var dashcooldown : bool = false
 var left : bool
 var right : bool
+var scale1 : bool
 
 func add_heart(amount : int) -> void:
 	health_component.maxHealth += amount
@@ -70,7 +71,8 @@ func jelly_bounce(amount : float) -> void:
 func mustard_launch():
 	velocity.y = -700
 
-
+func sizeUp():
+	scale1 = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
